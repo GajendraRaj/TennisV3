@@ -5,8 +5,10 @@ import Score from "./score";
 const TennisGame = () => {
   return (
     <div>
-      <div>
-        <Player />
+      <div className="playerContainer">
+        <div className="leftContainer">
+          <Player />
+        </div>
       </div>
       <div>
         <Score />

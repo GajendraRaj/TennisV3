@@ -22,3 +22,14 @@
 .App-link {
   color: #61dafb;
 }
+
+.playerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftContainer {
+  padding-right: 30%;
+}
