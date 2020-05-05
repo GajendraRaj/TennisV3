@@ -6,13 +6,16 @@ const Player = (props) => {
   return (
     <div>
       <h5>{props.name}</h5>
-      <button>{Constants.PLAYER_BUTTON_TEXT}</button>
+      <button onClick={() => props.onUpdateScore(props.name)}>
+        {Constants.PLAYER_BUTTON_TEXT}
+      </button>
     </div>
   );
 };
 
 Player.propTypes = {
   name: PropTypes.string.isRequired,
+  onUpdateScore: PropTypes.func,
 };
 
 export default Player;
