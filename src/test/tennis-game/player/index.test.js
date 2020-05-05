@@ -14,6 +14,10 @@ describe("Player component", () => {
   });
 
   it("should render the first player name as Player 1", () => {
-    expect(wrapper.find("div").text()).toBe("Player 1");
+    expect(wrapper.find("h5").text()).toBe("Player 1");
+  });
+
+  it("should render button for scoring", () => {
+    expect(wrapper.find("button").length).toBe(1);
   });
 });
