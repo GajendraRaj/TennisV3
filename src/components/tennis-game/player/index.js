@@ -5,7 +5,7 @@ const Player = () => {
   return (
     <div>
       <h5>{Constants.PLAYER1_NAME}</h5>
-      <button>Scored</button>
+      <button>{Constants.SCORE}</button>
     </div>
   );
 };
