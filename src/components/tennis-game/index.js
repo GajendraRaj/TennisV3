@@ -7,7 +7,9 @@ const TennisGame = () => {
   const [score, setScore] = useState(0);
 
   const updateScore = (player) => {
-    setScore(1);
+    if (player === Constants.PLAYER1_NAME) {
+      setScore(score + 1);
+    }
   };
 
   return (
@@ -19,7 +21,7 @@ const TennisGame = () => {
         <Player name={Constants.PLAYER2_NAME} onUpdateScore={updateScore} />
       </div>
       <div>
-        <Score scores={score} />
+        <Score player1Score={score} />
       </div>
     </div>
   );

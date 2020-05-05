@@ -4,17 +4,18 @@ import Constants from "../../../constant";
 
 const Score = (props) => {
   const [score, setScore] = useState("0");
-  const { scores } = props;
+  const { player1Score } = props;
+
   useEffect(() => {
     let gameScore;
-    if (scores === 1) {
+    if (player1Score === 1) {
       gameScore = `15, 0`;
     } else {
       gameScore = "0";
     }
 
     setScore(gameScore);
-  }, [scores]);
+  }, [player1Score]);
 
   return (
     <div>
@@ -25,7 +26,7 @@ const Score = (props) => {
 };
 
 Score.propTypes = {
-  scores: PropTypes.number.isRequired,
+  player1Score: PropTypes.number.isRequired,
 };
 
 export default Score;

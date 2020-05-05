@@ -22,15 +22,15 @@ describe("Score component", () => {
     expect(wrapper.find("label").text()).toEqual("0");
   });
 
-  it("Should throw error message if there is no scores prop", () => {
+  it("Should throw error message if there is no player1Score prop", () => {
     const errorMsg =
-      "Failed prop type: The prop `scores` is marked as required in `<<anonymous>>`, but its value is `undefined`.";
+      "Failed prop type: The prop `player1Score` is marked as required in `<<anonymous>>`, but its value is `undefined`.";
 
     const result = checkPropTypes(
       Score.propTypes,
-      { scores: undefined },
+      { player1Score: undefined },
       "prop",
-      Score.scores
+      Score.player1Score
     );
 
     expect(result).toEqual(errorMsg);
