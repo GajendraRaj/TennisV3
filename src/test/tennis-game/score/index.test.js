@@ -14,6 +14,10 @@ describe("Score component", () => {
   });
 
   it("should render the heading as Score", () => {
-    expect(wrapper.find("div").text()).toBe("Score");
+    expect(wrapper.find("h5").text()).toBe("Score");
+  });
+
+  it("should display default score as 0 on game start", () => {
+    expect(wrapper.find("label").text()).toEqual("0");
   });
 });
