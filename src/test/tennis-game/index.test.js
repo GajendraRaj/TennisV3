@@ -37,4 +37,12 @@ describe("TennisGame functionality", () => {
     scoreButton1.simulate("click");
     expect(score.text()).toEqual("15, 0");
   });
+
+  it("should render score as '30, 0' when player 1 scores twice", () => {
+    const score = wrapper.find("Score").find("label");
+    const scoreButton1 = wrapper.find("Player").at(0).find("button");
+
+    scoreButton1.simulate("click").simulate("click");
+    expect(score.text()).toEqual("30, 0");
+  });
 });
