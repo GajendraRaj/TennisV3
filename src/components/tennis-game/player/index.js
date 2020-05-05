@@ -11,7 +11,7 @@ const Player = (props) => {
   );
 };
 
-Player.prototype = {
+Player.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
