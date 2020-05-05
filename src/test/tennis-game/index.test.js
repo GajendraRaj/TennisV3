@@ -16,7 +16,7 @@ describe("TennisGame component", () => {
   });
 
   it("should render the Player component", () => {
-    expect(wrapper.find(Player).length).toEqual(1);
+    expect(wrapper.find(Player).length).toEqual(2);
   });
 
   it("should render the Score component", () => {

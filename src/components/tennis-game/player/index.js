@@ -1,13 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Constants from "../../../constant";
 
-const Player = () => {
+const Player = (props) => {
   return (
     <div>
-      <h5>{Constants.PLAYER1_NAME}</h5>
-      <button>{Constants.SCORE}</button>
+      <h5>{props.name}</h5>
+      <button>{Constants.PLAYER_BUTTON_TEXT}</button>
     </div>
   );
+};
+
+Player.prototype = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Player;

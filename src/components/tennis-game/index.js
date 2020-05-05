@@ -7,8 +7,9 @@ const TennisGame = () => {
     <div>
       <div className="playerContainer">
         <div className="leftContainer">
-          <Player />
+          <Player name="Player 1" />
         </div>
+        <Player name="Player 2" />
       </div>
       <div>
         <Score />

@@ -6,7 +6,7 @@ describe("Player component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Player />);
+    wrapper = shallow(<Player name="Player 1" />);
   });
 
   it("should render a div", () => {
@@ -19,5 +19,10 @@ describe("Player component", () => {
 
   it("should render button for scoring", () => {
     expect(wrapper.find("button").length).toBe(1);
+  });
+
+  it("should render the Second player name as Player 2", () => {
+    const wrapper = shallow(<Player name="Player 2" />);
+    expect(wrapper.find("h5").text()).toBe("Player 2");
   });
 });
