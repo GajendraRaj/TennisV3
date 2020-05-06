@@ -41,6 +41,11 @@ describe("TennisGame functionality", () => {
     clickHandler(scoreButton1, 2);
     expect(score.text()).toEqual("30, 0");
   });
+
+  it("should render score as '40, 0' when player 1 scores thrice", () => {
+    clickHandler(scoreButton1, 3);
+    expect(score.text()).toEqual("40, 0");
+  });
 });
 
 function clickHandler(button, times) {
