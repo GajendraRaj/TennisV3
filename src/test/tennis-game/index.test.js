@@ -74,6 +74,12 @@ describe("TennisGame functionality", () => {
     clickHandler(scoreButton2, 1);
     expect(score.text()).toEqual("30, 15");
   });
+
+  it("should render score as '30 all' when both Players scores twice", () => {
+    clickHandler(scoreButton1, 2);
+    clickHandler(scoreButton2, 2);
+    expect(score.text()).toEqual("30 all");
+  });
 });
 
 function clickHandler(button, times) {
