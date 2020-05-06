@@ -26,10 +26,9 @@ const Score = (props) => {
         return SCORE_LOOKUP[player1Score] + " all";
       } else if (isPlayerScoredMorethanLookUpScore) {
         if (isAdvantage) {
-          if (isAdvantage) {
-            return `Advantage ${player}`;
-          }
+          return `Advantage ${player}`;
         }
+        if (player1Score > player2Score) return `Player 1 wins`;
       } else {
         return SCORE_LOOKUP[player1Score] + ", " + SCORE_LOOKUP[player2Score];
       }
