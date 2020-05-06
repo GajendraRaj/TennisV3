@@ -17,6 +17,10 @@ const Score = (props) => {
           return Constants.DEUCE;
         }
         return SCORE_LOOKUP[player1Score] + " all";
+      } else if (player1Score > 3) {
+        if (player1Score - player2Score === 1) {
+          return `Advantage Player 1`;
+        }
       } else {
         return SCORE_LOOKUP[player1Score] + ", " + SCORE_LOOKUP[player2Score];
       }
