@@ -4,6 +4,7 @@ const Constants = {
   PLAYER2_NAME: "Player 2",
   SCORE: "Score",
   PLAYER_BUTTON_TEXT: "Scored",
+  DEUCE: "Deuce",
 };
 
 export default Constants;

@@ -10,9 +10,11 @@ const Score = (props) => {
   useEffect(() => {
     const gameScore = () => {
       const isPlayersScoreEqual = player1Score === player2Score;
+      const isDeuce = player1Score >= 3;
+
       if (isPlayersScoreEqual) {
-        if (player1Score >= 3) {
-          return "Deuce";
+        if (isDeuce) {
+          return Constants.DEUCE;
         }
         return SCORE_LOOKUP[player1Score] + " all";
       } else {
