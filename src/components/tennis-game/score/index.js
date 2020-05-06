@@ -11,6 +11,9 @@ const Score = (props) => {
     const gameScore = () => {
       const isPlayersScoreEqual = player1Score === player2Score;
       if (isPlayersScoreEqual) {
+        if (player1Score >= 3) {
+          return "Deuce";
+        }
         return SCORE_LOOKUP[player1Score] + " all";
       } else {
         return SCORE_LOOKUP[player1Score] + ", " + SCORE_LOOKUP[player2Score];
