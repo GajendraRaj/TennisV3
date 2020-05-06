@@ -28,7 +28,8 @@ const Score = (props) => {
         if (isAdvantage) {
           return `Advantage ${player}`;
         }
-        if (player1Score > player2Score) return `Player 1 wins`;
+
+        return `${player} wins`;
       } else {
         return SCORE_LOOKUP[player1Score] + ", " + SCORE_LOOKUP[player2Score];
       }
