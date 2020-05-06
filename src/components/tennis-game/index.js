@@ -29,6 +29,11 @@ const TennisGame = () => {
     setIsGameOver(true);
   };
 
+  const resetGame = () => {
+    setScore(state);
+    setIsGameOver(false);
+  };
+
   return (
     <div>
       <div className="playerContainer">
@@ -51,6 +56,8 @@ const TennisGame = () => {
           player2Score={score.player2Score}
           onGameOverNotification={gameOverNotification}
         />
+        <br />
+        <button onClick={resetGame}>Reset Game</button>
       </div>
     </div>
   );

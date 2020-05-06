@@ -111,6 +111,13 @@ describe("TennisGame functionality", () => {
     clickHandler(scoreButton2, 5);
     expect(score.text()).toEqual("Player 2 wins");
   });
+
+  it("should render score as '0 all' when Reset the Game", () => {
+    clickHandler(scoreButton1, 2);
+    clickHandler(scoreButton2, 3);
+    wrapper.find("button").at(2).simulate("click");
+    expect(wrapper.find("Score").find("label").text()).toEqual("0 all");
+  });
 });
 
 function clickHandler(button, times) {
