@@ -11,15 +11,17 @@ const Score = (props) => {
     const gameScore = () => {
       const isPlayersScoreEqual = player1Score === player2Score;
       const isDeuce = player1Score >= 3;
+      const isPlayerScoredMorethanLookUpScore = player1Score > 3;
+      const isAdvantage = Math.abs(player1Score - player2Score) === 1;
 
       if (isPlayersScoreEqual) {
         if (isDeuce) {
           return Constants.DEUCE;
         }
         return SCORE_LOOKUP[player1Score] + " all";
-      } else if (player1Score > 3) {
-        if (player1Score - player2Score === 1) {
-          return `Advantage Player 1`;
+      } else if (isPlayerScoredMorethanLookUpScore) {
+        if (isAdvantage) {
+          return `Advantage ${Constants.PLAYER1_NAME}`;
         }
       } else {
         return SCORE_LOOKUP[player1Score] + ", " + SCORE_LOOKUP[player2Score];
