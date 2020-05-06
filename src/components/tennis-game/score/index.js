@@ -14,6 +14,10 @@ const Score = (props) => {
       const isPlayerScoredMorethanLookUpScore =
         player1Score > 3 || player2Score > 3;
       const isAdvantage = Math.abs(player1Score - player2Score) === 1;
+      const player =
+        player1Score > player2Score
+          ? Constants.PLAYER1_NAME
+          : Constants.PLAYER2_NAME;
 
       if (isPlayersScoreEqual) {
         if (isDeuce) {
@@ -22,10 +26,8 @@ const Score = (props) => {
         return SCORE_LOOKUP[player1Score] + " all";
       } else if (isPlayerScoredMorethanLookUpScore) {
         if (isAdvantage) {
-          if (player1Score > player2Score) {
-            return `Advantage ${Constants.PLAYER1_NAME}`;
-          } else {
-            return `Advantage ${Constants.PLAYER2_NAME}`;
+          if (isAdvantage) {
+            return `Advantage ${player}`;
           }
         }
       } else {
