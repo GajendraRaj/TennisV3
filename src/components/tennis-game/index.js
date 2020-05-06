@@ -25,6 +25,10 @@ const TennisGame = () => {
     }
   };
 
+  const gameOverNotification = () => {
+    setIsGameOver(true);
+  };
+
   return (
     <div>
       <div className="playerContainer">
@@ -45,7 +49,7 @@ const TennisGame = () => {
         <Score
           player1Score={score.player1Score}
           player2Score={score.player2Score}
-          onGameOverNotification={() => setIsGameOver(true)}
+          onGameOverNotification={gameOverNotification}
         />
       </div>
     </div>
