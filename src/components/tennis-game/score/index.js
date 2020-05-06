@@ -16,6 +16,8 @@ const Score = (props) => {
       gameScore = `40, 0`;
     } else if (player2Score === 1) {
       gameScore = `0, 15`;
+    } else if (player2Score === 2) {
+      gameScore = `0, 30`;
     } else {
       gameScore = "0";
     }
