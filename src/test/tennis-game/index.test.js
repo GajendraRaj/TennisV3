@@ -93,6 +93,13 @@ describe("TennisGame functionality", () => {
     scoreButton1.simulate("click");
     expect(score.text()).toEqual("Advantage Player 1");
   });
+
+  it("should render score as 'Advantage Player 2' when Player 2 scores four times and Player 1 scores thrice", () => {
+    clickHandler(scoreButton1, 3);
+    clickHandler(scoreButton2, 3);
+    scoreButton2.simulate("click");
+    expect(score.text()).toEqual("Advantage Player 2");
+  });
 });
 
 function clickHandler(button, times) {
