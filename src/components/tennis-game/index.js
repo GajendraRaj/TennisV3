@@ -9,6 +9,7 @@ const TennisGame = () => {
     player2Score: 0,
   };
   const [score, setScore] = useState(state);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const updateScore = (player) => {
     if (player === Constants.PLAYER1_NAME) {
@@ -28,14 +29,23 @@ const TennisGame = () => {
     <div>
       <div className="playerContainer">
         <div className="leftContainer">
-          <Player name={Constants.PLAYER1_NAME} onUpdateScore={updateScore} />
+          <Player
+            name={Constants.PLAYER1_NAME}
+            onUpdateScore={updateScore}
+            isGameOver={isGameOver}
+          />
         </div>
-        <Player name={Constants.PLAYER2_NAME} onUpdateScore={updateScore} />
+        <Player
+          name={Constants.PLAYER2_NAME}
+          onUpdateScore={updateScore}
+          isGameOver={isGameOver}
+        />
       </div>
       <div>
         <Score
           player1Score={score.player1Score}
           player2Score={score.player2Score}
+          onGameOverNotification={() => setIsGameOver(true)}
         />
       </div>
     </div>

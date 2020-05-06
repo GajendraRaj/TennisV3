@@ -7,7 +7,7 @@ describe("Player component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Player name={"Player 1"} />);
+    wrapper = shallow(<Player name={"Player 1"} isGameOver={false} />);
   });
 
   it("should render a div", () => {
@@ -23,8 +23,16 @@ describe("Player component", () => {
   });
 
   it("should render the Second player name as Player 2", () => {
-    const wrapper = shallow(<Player name={"Player 2"} />);
+    const wrapper = shallow(<Player name={"Player 2"} isGameOver={false} />);
     expect(wrapper.find("h5").text()).toBe("Player 2");
+  });
+
+  it("should render only heading and no button on gameover", () => {
+    wrapper = shallow(
+      <Player name="Player 1" onUpdateScore={() => {}} isGameOver={true} />
+    );
+    expect(wrapper.find("h5").text()).toEqual("Player 1");
+    expect(wrapper.find("button").length).toBe(0);
   });
 
   it("Should throw error message if there is no name prop", () => {
@@ -33,7 +41,7 @@ describe("Player component", () => {
 
     const result = checkPropTypes(
       Player.propTypes,
-      { name: undefined },
+      { name: undefined, isGameOver: false },
       "prop",
       Player.name
     );
@@ -47,9 +55,23 @@ describe("Player component", () => {
 
     const result = checkPropTypes(
       Player.propTypes,
-      { name: 12 },
+      { name: 12, isGameOver: false },
       "prop",
       Player.name
+    );
+
+    expect(result).toEqual(errorMsg);
+  });
+
+  it("Should throw error message if there is no isGameOver prop", () => {
+    const errorMsg =
+      "Failed prop type: The prop `isGameOver` is marked as required in `<<anonymous>>`, but its value is `undefined`.";
+
+    const result = checkPropTypes(
+      Player.propTypes,
+      { name: "Player 1", isGameOver: undefined },
+      "prop",
+      Player.isGameOver
     );
 
     expect(result).toEqual(errorMsg);
