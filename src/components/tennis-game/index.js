@@ -57,7 +57,7 @@ const TennisGame = () => {
           onGameOverNotification={gameOverNotification}
         />
         <br />
-        <button onClick={resetGame}>Reset Game</button>
+        <button onClick={resetGame}>{Constants.RESET_BUTTON_TEXT}</button>
       </div>
     </div>
   );

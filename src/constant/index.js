@@ -5,6 +5,7 @@ const Constants = {
   SCORE: "Score",
   PLAYER_BUTTON_TEXT: "Scored",
   DEUCE: "Deuce",
+  RESET_BUTTON_TEXT: "Reset Game",
 };
 
 export default Constants;
